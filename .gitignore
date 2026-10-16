@@ -1,0 +1,32 @@
+.venv/
+__pycache__/
+.pytest_cache/
+data/
+models/
+*.log
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local databases, recordings, and downloaded model weights
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.db
+*.wav
+*.mp3
+*.webm
+*.mp4
+*.gguf
+*.onnx
+*.safetensors
+
+# Editor and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

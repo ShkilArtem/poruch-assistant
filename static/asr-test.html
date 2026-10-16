@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Перевірка розпізнавання</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><header><div><h1>Перевірка голосу</h1><p><a href="/">Повернутися до асистента</a></p></div></header>
+<main style="display:block;max-width:1000px"><section class="panel">
+<h2>Твій голос: Parakeet v3 та Whisper</h2>
+<p>Спочатку зупини розмовну сесію асистента. Прочитай фразу точно як написано; можна виправити текст перед записом. Завантажені моделі отримають той самий запис. Порівняння на CPU може тривати кілька десятків секунд.</p>
+<p class="muted">Аудіо обробляється локально й не зберігається на диску. Результати залишаються на цій сторінці до перезавантаження; за бажанням їх можна завантажити. Час без завантаження — повторне розпізнавання цього ж запису прогрітою моделлю.</p>
+<label>Мікрофон<select id="testMic"><option value="">Типовий мікрофон</option></select></label>
+<label>Мова тесту<select id="testLanguage"><option value="uk">Українська</option><option value="ru">Російська</option><option value="fr">Французька</option></select></label>
+<label for="reference">Фраза <span id="phraseNumber"></span></label><textarea id="reference" maxlength="1000" style="min-height:100px"></textarea>
+<p><button id="record">Записати фразу</button> <button id="nextPhrase" class="secondary">Наступна фраза</button> <button id="exportResults" class="secondary" disabled>Завантажити результати</button></p>
+<p id="testStatus" role="status">Готовий до запису. Ліміт — 15 секунд.</p>
+<audio id="preview" controls hidden aria-label="Прослухати те, що отримали моделі"></audio>
+<p id="audioLevel" class="muted"></p>
+<div id="testResults"></div>
+</section></main><script type="module" src="/static/asr-test.js"></script></body></html>
